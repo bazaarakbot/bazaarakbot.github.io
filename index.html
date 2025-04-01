@@ -1,25 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بازی</title>
-
-    <link rel="stylesheet" href="./index.css">
+    <title>فروشگاه آنلاین</title>
+    <link rel="stylesheet" href="./static/styles.css">
     <script src="https://tapi.bale.ai/miniapp.js?1"></script>
-    <script src="/script.js"></script>
+    <script src="./static/script.js" defer></script>
 </head>
 <body>
-    <div class="body">
-        <h1>User Data:</h1>
-        <p id="user_data"></p>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>فروشگاه آنلاین</h1>
+        </div>
+        
+        <!-- Banner -->
+        <div class="banner">
+            تخفیف ویژه تا ۵۰٪
+        </div>
+        
+        <!-- Categories -->
+        <div class="categories">
+            <div class="category">
+                <img src="https://via.placeholder.com/50" alt="دیجیتال">
+                <p>دیجیتال</p>
+            </div>
+            <div class="category">
+                <img src="https://via.placeholder.com/50" alt="پوشاک">
+                <p>پوشاک</p>
+            </div>
+            <div class="category">
+                <img src="https://via.placeholder.com/50" alt="خانه">
+                <p>خانه</p>
+            </div>
+            <div class="category">
+                <img src="https://via.placeholder.com/50" alt="آرایشی">
+                <p>آرایشی</p>
+            </div>
+            <div class="category">
+                <img src="https://via.placeholder.com/50" alt="ورزشی">
+                <p>ورزشی</p>
+            </div>
+        </div>
+        
+        <!-- Products Section -->
+        <div id="products-container" class="products">
+            <!-- Products will be loaded dynamically from backend -->
+            <div class="loading-indicator">در حال بارگذاری محصولات...</div>
+        </div>
 
-        <h1>Callbacks:</h1>
-        <div>
-            <button id="close">close</button>
-            <button id="enableClosingConfirmation">enable closing confirmation</button>
-            <button id="expand">expand</button>
-            <button id="requestContact">request contact</button>
+        <!-- User Account Section (Hidden by default) -->
+        <div id="user-account-section" class="user-section hidden">
+            <div class="user-profile">
+                <div class="user-avatar">👤</div>
+                <div id="user-info" class="user-info">
+                    <!-- User info will be populated from Bale API -->
+                    <h3>اطلاعات کاربر:</h3>
+                    <div id="user_data_container">
+                        <p id="user_data">در حال دریافت اطلاعات کاربر...</p>
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <button id="register-shop-btn" class="action-button">ثبت فروشگاه</button>
+                    <button id="suggestions-btn" class="action-button">پیشنهادی داری؟</button>
+                    <button id="requestContact" class="action-button">دریافت اطلاعات تماس</button>
+                </div>
+            </div>
+            
+            <div class="user-callbacks">
+                <h3>عملیات‌های کاربری:</h3>
+                <div class="callback-buttons">
+                    <button id="close">بستن</button>
+                    <button id="enableClosingConfirmation">فعال‌سازی تأیید بستن</button>
+                    <button id="expand">گسترش</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Section (Hidden by default) -->
+        <div id="search-section" class="search-section hidden">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="جستجوی محصول...">
+                <button id="search-button">جستجو</button>
+            </div>
+            <div id="search-results" class="search-results">
+                <!-- Search results will appear here -->
+            </div>
+        </div>
+        
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <div class="toolbar-item" data-section="user-account-section">
+                <div class="toolbar-icon">👤</div>
+                <div class="toolbar-text">حساب کاربری</div>
+            </div>
+            <div class="toolbar-item" data-section="search-section">
+                <div class="toolbar-icon">🔍</div>
+                <div class="toolbar-text">جستجو</div>
+            </div>
+            <div class="toolbar-item active" data-section="products-container">
+                <div class="toolbar-icon">🏪</div>
+                <div class="toolbar-text">ویترین</div>
+            </div>
         </div>
     </div>
 </body>
