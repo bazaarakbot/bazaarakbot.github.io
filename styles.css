@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tahoma', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    direction: rtl;
+}
+
+.container {
+    max-width: 100%;
+    padding-bottom: 70px; /* Space for toolbar */
+}
+
+/* Header */
+.header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Categories */
+.categories {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.category {
+    min-width: 80px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.category img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+    background-color: #f0f0f0;
+    padding: 5px;
+}
+
+.category p {
+    font-size: 12px;
+}
+
+/* Products */
+.products-title {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white;
+    margin-top: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+    background-color: white;
+    min-height: 300px;
+}
+
+.product {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 10px;
+}
+
+.product-name {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.product-price {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.loading-indicator {
+    grid-column: span 2;
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+
+/* User Account Section */
+.user-section {
+    background-color: white;
+    padding: 20px;
+    min-height: 300px;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-avatar {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.user-info {
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.user-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+}
+
+.action-button {
+    margin: 5px 0;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #3a7bc8;
+}
+
+/* Search Section */
+.search-section {
+    background-color: white;
+    padding: 20px;
+    min-height: 300px;
+}
+
+.search-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+}
+
+#search-button {
+    padding: 12px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-results {
+    min-height: 200px;
+}
+
+/* Toolbar */
+.toolbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.toolbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #777;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.toolbar-item:hover {
+    background-color: #f5f5f5;
+}
+
+.toolbar-item.active {
+    color: #4a90e2;
+}
+
+.toolbar-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.toolbar-text {
+    font-size: 12px;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
